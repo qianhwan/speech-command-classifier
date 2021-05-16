@@ -1,2 +1,4 @@
 librosa==0.8.0
 mlflow==1.17.0
+pytest==6.2.4
+torchtest==0.5
