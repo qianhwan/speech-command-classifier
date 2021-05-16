@@ -53,13 +53,14 @@ if __name__ == '__main__':
 
     model = Model(n_input=1, n_output=len(ALL_LABELS))
 
-    if args.resume:
-        model.load_checkpoints(args.resume)
-
     trainer = Trainer(config['trainer_params'],
                       args.output,
                       train_dataloader,
                       val_dataloader,
                       model,
                       'cpu')
+
+    if args.resume:
+        trainer.load_checkpoints(args.resume)
+
     trainer.train()
